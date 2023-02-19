@@ -1,0 +1,252 @@
+@import "variables";
+@import "reset";
+
+body {
+    background-color: $color-Light-gray;
+    font-size: $font-size;
+}
+
+.comentario {
+    font-size: 1.2rem;
+}
+
+.container-main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media screen and (max-width: $small) {
+        // min-width: $large;
+        width: 100%;
+    }
+}
+
+.container-comentario, .container-respuesta-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+// EStilos para el comentario
+.comentario, .respuesta-comentario {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: $color-White;
+    border-radius: 10px;
+    padding: 20px 20px;
+    position: relative;
+
+    .puntaje {
+        width: 60px;
+        max-height: 90px;
+        background-color: $color-Light-grayish-blue;
+        margin: 0px 15px;
+        border-radius: 5px;
+        padding: 4px 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            color: $color-Dark-blue;
+            border: none;
+            font-size: $font-size + 4;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        p {
+            color: $color-Moderate-blue;
+            font-weight: bold;
+            font-size: $font-size + 5;
+        }
+        
+    }
+
+    .data-comentario {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        div:first-child {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+    
+            article {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: left;
+    
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+    
+                p {
+                    margin-left: 10px;
+                }
+
+                .name-user {
+                    max-width: 150px;
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        div:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            min-width: 100%;
+        }
+    }
+
+    .options {
+        position: absolute;
+        right: 30px;
+        font-weight: bold;
+        font-size: $font-size;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+        
+        .option-reply {
+            color: $color-icon-edit;
+            cursor: pointer;
+        }
+
+        .option-delete {
+            color: $color-icon-delete;
+            cursor: pointer;
+        }
+
+        .option-edit {
+            color: $color-icon-edit;
+            cursor: pointer;
+        }
+
+        a img {
+            margin-right: 3px;
+        }
+    }
+    
+    
+    @media screen and (max-width: $small) {
+        flex-direction: column-reverse;
+        
+        .puntaje {
+            flex-direction: row;
+            width: 80px;
+            padding: 5px 5px;
+            margin: 0px 0px;
+        }
+        
+        .options {
+             bottom: 20px;
+        }
+    }
+
+}
+
+// Estilos para el nuevo comentario
+.nuevo-comentario, .nueva-respuesta-comentario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    transition: all 3s ease-in-out;
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+
+    button {
+        background-color: $color-Moderate-blue;
+        width: 100px;
+        height: 40px;
+        color: $color-White;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .texto-comentario {
+        flex-grow: 1;
+        border: 1px solid $color-Moderate-blue;
+        border-radius: 10px;
+        padding: 10px 10px;
+        font-family: $font-family;
+        font-size: $font-size;
+    }
+
+    @media screen and (max-width: $small) {
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 55px;
+
+        img {
+            position: absolute;
+            bottom: -50px;
+        }
+
+        button {
+            position: absolute;
+            bottom: -50px;
+            right: 1px;
+        }
+    }
+}
+
+// Estilos para la actualización del comentario
+// Estilos para el nuevo comentario
+.update-comentario {
+    min-width: 100%;
+    // flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 10px;
+
+    button {
+        background-color: $color-Moderate-blue;
+        width: 100px;
+        height: 40px;
+        color: $color-White;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .texto-comentario {
+        border: 1px solid $color-Moderate-blue;
+        border-radius: 10px;
+        padding: 10px 10px;
+        font-family: $font-family;
+        font-size: $font-size;
+    }
+
+    @media screen and (max-width: $small) {
+        
+    }
+}
+
+// Css para las respuestas a los comentarios 
+.container-resp-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-left: 3px solid rgba(224, 217, 217, 0.547);
+    margin-left: 4%;
+    padding-left: 2%;
+}
