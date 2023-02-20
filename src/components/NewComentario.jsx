@@ -31,6 +31,7 @@ export const NewComentario = () => {
           </textarea>
           <button
             onClick={handleAddComment}
+            disabled={!(textComment.trim().length > 0)}
           >
             Send
           </button>
