@@ -5,10 +5,10 @@ import imgedit from '../assets/iconos/icon-edit.svg'
 import { UpdateComentario } from './UpdateComentario'
 import { NewRespuestaComentario } from './NewRespuestaComentario'
 import { useContext, useEffect, useState } from 'react'
-import { ViewScore } from './viewScore'
 import { AppContext } from '../context/AppContext'
 import Swal from 'sweetalert2'
 import { textDiasDate } from '../data/operacionesData'
+import { ViewScore } from './ViewScore'
 
 
 export const RespuestaComentario = ({

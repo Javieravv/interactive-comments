@@ -4,9 +4,9 @@ import imgreply from '../assets/iconos/icon-reply.svg'
 import { AppContext } from '../context/AppContext'
 import { NewRespuestaComentario } from './NewRespuestaComentario'
 import { RespuestaComentario } from './RespuestaComentario'
-import { ViewScore } from './viewScore'
 import { v4 as uuidv4} from 'uuid'
 import { difDiasDate, textDiasDate } from '../data/operacionesData'
+import { ViewScore } from './ViewScore'
 
 export const Comentario = ({
     idComment,
